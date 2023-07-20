@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import Background from '../../assets/background.svg'
 
 export const Container = styled.div`
@@ -8,6 +9,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    height: 100vh;
 `;
 
 export const Image = styled.img`
@@ -22,18 +24,10 @@ export const ContainerItens = styled.div`
     border-radius: 61px 61px 0px 0px;
     padding: 50px 38px;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    height: 100vh;
 `;
 
-export const H1 = styled.h1`
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 40px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 80px;
-`;
 
 export const InputLabel = styled.p`
     font-style: normal;

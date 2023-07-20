@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
+import {
+  Container,
+  Image,
+  ContainerItens,
+  Button,
+  User
+} from './styles'
+
+import H1 from '../../components/Title'
+
 import Avatar from '../../assets/avatar.svg'
-import { Container, H1, Image, ContainerItens, Button, User } from './styles'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 
@@ -11,7 +21,7 @@ import Trash from '../../assets/trash.svg'
 const Users = () => {
 
   const [users, setUsers] = useState([])
- 
+  const navigate = useNavigate()
 
 
 
@@ -24,11 +34,17 @@ const Users = () => {
 
   }, [])
 
+
   async function deleteUser(userId) {
     await axios.delete(`http://localhost:3001/users/${userId}`)
     const newUsers = users.filter(user => user.id !== userId);
 
     setUsers(newUsers);
+  }
+
+
+  function goBackPage() {
+    navigate('/');
   }
 
   return (
@@ -46,7 +62,7 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button>
+        <Button onClick={goBackPage}>
           <img alt="arrow" src={Arrow} /> Voltar
         </Button>
 
