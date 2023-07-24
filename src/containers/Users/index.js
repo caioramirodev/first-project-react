@@ -6,12 +6,12 @@ import axios from 'axios'
 import {
   Container,
   Image,
-  ContainerItens,
-  Button,
   User
 } from './styles'
 
 import H1 from '../../components/Title'
+import ContainerItens from '../../components/ContainerItens'
+import Button from '../../components/Button'
 
 import Avatar from '../../assets/avatar.svg'
 import Arrow from '../../assets/arrow.svg'
@@ -50,7 +50,7 @@ const Users = () => {
   return (
     <Container>
       <Image alt="logo-image" src={Avatar} />
-      <ContainerItens>
+      <ContainerItens isBlur={true}>
         <H1>Usuários</H1>
 
         <ul>
@@ -62,7 +62,7 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button onClick={goBackPage}>
+        <Button isBack={true} onClick={goBackPage}>
           <img alt="arrow" src={Arrow} /> Voltar
         </Button>
 
